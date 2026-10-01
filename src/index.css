@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Lora", "Lora Fallback", serif;
+}
+
+body {
+  font-family: var(--font-serif);
+}
