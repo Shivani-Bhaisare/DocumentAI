@@ -343,9 +343,9 @@ const PricingSection = () => {
                 </ul>
               </div>
 
-              {/* CTA Button */}
-              <div>
-                <a href={loginUrl} className="block w-full">
+              {/* CTA Buttons */}
+              <div className="flex flex-col gap-2 pt-2">
+                <a href={`${appUrl}?inquiry=${encodeURIComponent(plan.name)}`} className="block w-full">
                   <button
                     type="button"
                     className={`w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md ${
@@ -354,8 +354,20 @@ const PricingSection = () => {
                         : "bg-[#274690] text-white hover:bg-[#1f3770] hover:shadow-lg hover:scale-[1.02]"
                     }`}
                   >
-                    <span>Get Started</span>
+                    <span>Request This Plan</span>
                     <ArrowRight size={15} />
+                  </button>
+                </a>
+                <a href={`${appUrl}?plan=${encodeURIComponent(plan.name)}`} className="block w-full">
+                  <button
+                    type="button"
+                    className={`w-full py-2 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer ${
+                      featured
+                        ? "text-white/80 hover:text-white hover:bg-white/10"
+                        : "text-[#274690] hover:text-[#1f3770] hover:bg-blue-50/60"
+                    }`}
+                  >
+                    <span>View Details & Limits</span>
                   </button>
                 </a>
               </div>
